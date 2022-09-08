@@ -18,6 +18,11 @@
   --light2-cl: #ececec;
   --black-cl: #000000;
   --transparent-white-cl: rgba(255, 255, 255, 0.6);
+
+  /*animation*/
+
+  --animation-time: 250ms;
+  --time-functial: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /**
@@ -168,7 +173,7 @@ button {
 }
 
 .header .link {
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--animation-time) var(--time-functial);
 }
 
 .header .link:hover,
@@ -407,8 +412,8 @@ button {
 }
 
 .socials-item {
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--animation-time) var(--time-functial),
+    background-color var(--animation-time) var(--time-functial);
 }
 
 .socials-item:hover,
@@ -438,7 +443,8 @@ button {
   align-items: center;
   color: #afb1b8;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--animation-time) var(--time-functial),
+    border var(--animation-time) var(--time-functial);
 }
 
 .clients-logo {
@@ -482,7 +488,7 @@ button {
 }
 
 .footer .link {
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--animation-time) var(--time-functial);
 }
 .footer .link:hover,
 .footer .link:focus {
@@ -535,7 +541,7 @@ button {
 }
 
 .footer-social.link {
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--animation-time) var(--time-functial);
 }
 
 .footer-social.link:hover,
@@ -573,7 +579,7 @@ button {
   text-decoration: none;
   display: block;
 
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--animation-time) var(--time-functial);
 }
 
 .picture:hover,
@@ -610,7 +616,7 @@ button {
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
 
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--animation-time) var(--time-functial);
 }
 
 .portfolio-item:hover .overlay {
@@ -656,9 +662,10 @@ button {
   margin: 0 auto;
   padding: 6px 22px;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-radius250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--animation-time) var(--time-functial),
+    background-color var(--animation-time) var(--time-functial),
+    box-shadow var(--animation-time) var(--time-functial),
+    border-radius var(--animation-time) var(--time-functial);
 }
 
 .button:hover,
@@ -689,7 +696,7 @@ button {
 
   opacity: 1;
 
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--animation-time) var(--time-functial);
 }
 
 .backdrop.is-hidden {
@@ -699,13 +706,15 @@ button {
 }
 
 .backdrop.is-hidden.modal {
-  transform: translate(-50%, -50%) scale(0.7);
+  transform: translate(-50%, -50%) scale(0.3);
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--animation-time) var(--time-functial);
 
   width: 530px;
   height: 580px;
@@ -714,13 +723,7 @@ button {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-
-  transform: translate(-50%, -50%) scale(1);
-
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-
 
 .modal-btn {
   position: absolute;
