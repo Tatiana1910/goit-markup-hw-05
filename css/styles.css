@@ -167,6 +167,10 @@ button {
   fill: currentColor;
 }
 
+.header .link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .header .link:hover,
 .header .link:focus {
   color: var(--accent-txt-cl);
@@ -185,7 +189,7 @@ button {
   color: var(--accent-txt-cl);
 }
 
-/**
+/*
   |============================
   | Main
   |============================
@@ -297,6 +301,33 @@ button {
   padding-top: 0;
 }
 
+.activities {
+  position: relative;
+}
+
+.activities-label {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  padding: 27px 107px;
+  width: 370px;
+  height: 70px;
+
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.activities-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-align: center;
+
+  text-transform: uppercase;
+
+  color: var(--white-txt-cl);
+}
+
 .heading {
   font-weight: 700;
   font-size: 36px;
@@ -375,8 +406,13 @@ button {
   color: #afb1b8;
 }
 
+.socials-item {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .socials-item:hover,
-.social-item:focus {
+.socials-item:focus {
   color: var(--white-txt-cl);
   background-color: var(--accent-txt-cl);
 }
@@ -401,6 +437,8 @@ button {
   justify-content: center;
   align-items: center;
   color: #afb1b8;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-logo {
@@ -443,6 +481,9 @@ button {
   margin-top: 20px;
 }
 
+.footer .link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .footer .link:hover,
 .footer .link:focus {
   color: var(--accent-txt-cl);
@@ -493,12 +534,16 @@ button {
   fill: var(--white-txt-cl);
 }
 
-.footer-social:hover,
-.footer-social:focus {
+.footer-social.link {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social.link:hover,
+.footer-social.link:focus {
   background-color: var(--accent-txt-cl);
 }
 
-/**
+/*
   |============================
   | Portfolio
 
@@ -527,6 +572,8 @@ button {
 .picture {
   text-decoration: none;
   display: block;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .picture:hover,
@@ -562,6 +609,8 @@ button {
   width: 100%;
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item:hover .overlay {
@@ -606,6 +655,10 @@ button {
   display: block;
   margin: 0 auto;
   padding: 6px 22px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-radius250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
@@ -615,4 +668,76 @@ button {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+}
+
+/*
+  |============================
+  MODAL WINDOW
+  |============================
+*/
+
+.backdrop {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.backdrop.is-hidden.modal {
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 530px;
+  height: 580px;
+  background-color: var(--white-bg-cl);
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
+.modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--white-bg-cl);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  cursor: pointer;
 }
