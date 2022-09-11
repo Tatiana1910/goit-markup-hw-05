@@ -310,27 +310,23 @@ button {
   position: relative;
 }
 
-.activities-label {
-  position: absolute;
+.activities-text {
+  font-weight: 700;
+  line-height: calc(16 / 14);
+  color: var(--white-txt-cl);
+  text-transform: uppercase;
 
+  position: absolute;
   bottom: 0;
-  left: 0;
-  padding: 27px 107px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 370px;
   height: 70px;
 
   background-color: rgba(47, 48, 58, 0.8);
-}
-
-.activities-text {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: calc(16 / 14);
-  text-align: center;
-
-  text-transform: uppercase;
-
-  color: var(--white-txt-cl);
 }
 
 .heading {
@@ -619,7 +615,8 @@ button {
   transition: transform var(--animation-time) var(--time-functial);
 }
 
-.portfolio-item:hover .overlay {
+.picture:hover .overlay,
+.picture:focus .overlay{
   transform: translateY(0);
 }
 
@@ -664,8 +661,7 @@ button {
 
   transition: color var(--animation-time) var(--time-functial),
     background-color var(--animation-time) var(--time-functial),
-    box-shadow var(--animation-time) var(--time-functial),
-    border-radius var(--animation-time) var(--time-functial);
+    box-shadow var(--animation-time) var(--time-functial);
 }
 
 .button:hover,
@@ -702,7 +698,7 @@ button {
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 .backdrop.is-hidden.modal {
